@@ -1,9 +1,15 @@
 # This is a workflow to run a python script every day on the latest ubuntu and python versions
 name: Daily Python Script
+
 on:
-  schedule:
+  workflow_dispatch
+
+
+
+#on:
+  #schedule:
     # Runs at 00:00 UTC every day
-    - cron: '0 0 * * *'
+    #- cron: '0 0 * * *'
 jobs:
   run-script:
     runs-on: ubuntu-latest
