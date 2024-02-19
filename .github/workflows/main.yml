@@ -1,0 +1,24 @@
+# This is a workflow to run a python script every day on the latest ubuntu and python versions
+name: Daily Python Script
+on:
+  schedule:
+    # Runs at 00:00 UTC every day
+    - cron: '0 0 * * *'
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      # Check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Set up python
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      # Install dependencies
+      - name: Install Requirements
+        run: pip install -r requirements.txt
+      # Run the script
+      - name: Run Script
+        run: python script.py
