@@ -14,7 +14,9 @@ jobs:
   run-script:
     runs-on: ubuntu-latest
     steps:
-      
+      # Check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
       # Run the script
       - name: Run Script
-        run: python script.py
+        run: python3 script.py
