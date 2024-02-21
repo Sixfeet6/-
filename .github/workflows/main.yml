@@ -14,17 +14,7 @@ jobs:
   run-script:
     runs-on: ubuntu-latest
     steps:
-      # Check out the repository
-      - name: Checkout
-        uses: actions/checkout@v2
-      # Set up python
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-      # Install dependencies
-      - name: Install Requirements
-        run: pip install -r requirements.txt
+      
       # Run the script
       - name: Run Script
         run: python script.py
